@@ -23,6 +23,11 @@ class ReservationDetailsViewController: UIViewController,UICollectionViewDelegat
         4
     }
     
+  @IBAction func ReserveBtn(_ sender: Any) {
+        let reservationDetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "PaymentDeatilsViewId") as! PaymentDeatilsViewController
+    
+        self.navigationController?.pushViewController(reservationDetailsVC, animated: true)
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reservationDetailsViewCell", for: indexPath) as! ReservationDetailsIdCollectionViewCell
